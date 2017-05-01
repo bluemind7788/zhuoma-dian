@@ -111,6 +111,7 @@ app.use(favicon('./public/logo-48.png'))
 app.use('/service-worker.js', serve('./dist/service-worker.js'))
 app.use('/manifest.json', serve('./manifest.json'))
 app.use('/dist', serve('./dist'))
+app.use('/public', serve('./public'))
 app.use('/website', serve('./website'))
 
 app.get('/', function(req, res, next) {
