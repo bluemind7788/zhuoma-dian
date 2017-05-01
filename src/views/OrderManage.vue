@@ -364,7 +364,7 @@ export default {
             OrderApi.fetchOrderDetails({
                 restid: this.restid,
                 starttime: this.startDate + ' 00:00:00',
-                endtime: this.endDate + ' 59:59:59'
+                endtime: this.endDate + ' 23:59:59'
             }, (res) => {
                 this.orderList.splice(0, this.orderList.length);
                 for(let k in res.data.orders) {
