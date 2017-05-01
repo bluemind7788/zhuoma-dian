@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>桌码-自助点餐系统</title>
+    <meta name="keywords" content="自助点餐系统，桌码，微信点餐，智慧餐厅，免安装" />
+    <meta name="description" content="餐桌上的二维码，顾客扫码自助点餐，免安装、免下载，顾客少等待，餐馆少花钱。" />
+    <base targrt="_blank">
+    <meta http-equiv="X-UA-Compatible" Content="IE=Edge,chrome=1">
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui" /> -->
+    <link href="/website/css/glb1311.css" rel="stylesheet" type="text/css" media="all" ignoreapd="false">
+    <link rel="stylesheet" type="text/css" href="/website/css/jquery.fullPage.css">
+    <link rel="stylesheet" type="text/css" href="/website/css/index2.css">
+    <link rel="stylesheet" type="text/css" href="/website/css/animate.css">
+</head>
+
+<body>
+<!-- <div class="weixin">
+    <p>掌上高考公众号</p>
+    <img src="/website/img/QRcode2.png" alt="">
+</div> -->
+<div class="section page1">
+    <div class="center grid eol-animation">
+        <div class="left eol-show">
+            <div class="roll"></div>
+            <div class="people"></div>
+            <div class="cellphone"></div>
+            <div class="hand"></div>
+        </div>
+        <div class="right eol-txt">
+            <img src="/website/img/logo.png" alt="" class="logo">
+            <p class="txt">扫码点菜，自助下单</p>
+            <div class="grid">
+                <a class="left btn" href="http://www.zhuoma.tech/view/login" target="_blank">商户登录</a>
+                <a class="right btn" href="http://www.zhuoma.tech/view/login" target="_blank">注册商户</a>
+            </div>
+            <div class="QRcode">
+                <img src="/website/img/QRcode.png" alt="">
+                <p>立即体验扫码点餐</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section page2">
+    <div class="center grid">
+        <div class="txt left col-50">
+            <h2>智慧系统</h2>
+            <h3>客户端+厨师端+服务员端<br><br>+后台管理系统</h3>
+            <p>轻松打造属于您的智慧云餐厅</p>
+        </div>
+        <div class="right img col-50">
+            <img src="/website/img/page2-img.png" alt="">
+        </div>
+    </div>
+</div>
+<div class="section page3">
+    <div class="center grid">
+        <div class="txt right col-50">
+            <h2>扫码点菜</h2>
+            <h3>免下载安装</h3>
+            <h3>改造低成本</h3>
+            <h3>提高翻台率</h3>
+            <p>餐桌上的二维码</p>
+        </div>
+        <div class="left img col-50">
+            <img src="/website/img/page3-img.png" alt="">
+        </div>
+    </div>
+</div>
+<div class="section page4">
+    <div class="center grid">
+        <div class="txt left col-50">
+            <h2>轻松管理</h2>
+            <h3>换菜单so easy</h3>
+            <h3>数据统计，一目了然</h3>
+            <p></p>
+        </div>
+        <div class="right img col-50">
+            <img src="/website/img/page4-img.png" alt="">
+        </div>
+    </div>
+</div>
+<div class="section page5">
+    <div class="page5-info">
+        <div class="center grid">
+            <div class="info">
+                <h4>自助点餐</h4>
+                <h5>桌码帮您打造属于您的智慧餐厅</h5>
+                <div class="grid QRcode_bottom">
+                    <div class="left">
+                        <img src="/website/img/page5-img.png" alt="">
+                    </div>
+                    <div class="right">
+                        <img src="/website/img/QRcode.png" alt="">
+                        <p>扫码体验</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+   
+        <!-- 通用底部代码,上线记得删除 -->
+        
+    </div>
+</div>
+
+<script src="/website/js/jquery.js" ignoreapd="false"></script>
+<script src="/website/js/jquery-ui-1.10.3.min.js"></script>
+<script src="/website/js/jquery.fullPage.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $(".eol-show .roll").addClass("zoomIn");
+        setTimeout('$(".eol-show .cellphone").addClass("circle")',1000);
+        setTimeout('$(".eol-show .hand").animate({bottom:"0px"},1000)',1800);
+        setTimeout('$(".eol-show .eolgkpage").addClass("zoomIn")',3000);
+        setTimeout('$(".eol-show .people").addClass("show")',1800);
+        setTimeout('$(".eol-txt").fadeIn(2000)',3000);
+        setTimeout('$(".eol-txt .QRcode").addClass("bounce")',5000);
+        $.fn.fullpage({
+            slidesColor: ['#4c9bf5', '#9462e0', '#6ac75b', '#fff29b','#ffffff'],
+            anchors: ['page1', 'page2', 'page3', 'page4' ,'page5',  'page6',  'page7' ],
+            'navigation': true,
+            'navigationPosition': 'right',
+            'resize': true,
+            afterLoad: function(anchorLink, index){
+                if(index == '1'){
+                   $(".eol-txt .QRcode").addClass("bounce")
+                   setTimeout('$(".eol-txt .weixin").addClass("bounce")',2000);
+                }
+                if(index == '2'){
+                    $(".weixin").addClass("show");
+                    $(".weixin").css("top",($(window).height() - $("#fullPage-nav").height()) /2 - 96)
+                    $('.page2 .txt').addClass("fadeInLeft");
+                    $('.page2 .img').addClass("fadeInRight");
+                }
+                if(index == '3'){
+                    $('.page3 .img').addClass("fadeInLeft");
+                    $('.page3 .txt').addClass("fadeInRight");
+                }
+                if(index == '4'){
+                    $('.page4 .txt').addClass("fadeInLeft");
+                    $('.page4 .img').addClass("fadeInRight");
+                }
+                if(index == "5"){ 
+                    var slide5_top = ($(window).height() - $(".page5-info .center").height() - $(".footer").height()) / 2;
+                    $(".page5-info .center").css("margin-top",slide5_top);
+                    $('.page5 .info').addClass("zoomIn");
+                }
+            },
+            onLeave: function(index, direction){
+                if(index == '1'){
+                    $(".weixin").removeClass("show");
+                    $(".eol-txt .QRcode").removeClass("bounce")
+                    $(".eol-txt .weixin").removeClass("bounce")
+                }
+                if(index == '2'){
+                    $('.page2 .txt').removeClass("fadeInLeft");
+                    $('.page2 .img').removeClass("fadeInRight");
+                }
+                if(index == '3'){
+                    $('.page3 .img').removeClass("fadeInLeft");
+                    $('.page3 .txt').removeClass("fadeInRight");
+                }
+                if(index == '4'){
+                    $('.page4 .txt').removeClass("fadeInLeft");
+                    $('.page4 .img').removeClass("fadeInRight");
+                }
+                if(index == '5'){
+                    $('.page5 .info').removeClass("zoomIn");
+                }
+                
+            }
+        });
+    });
+</script>
+
+<!-- 自适应高度 -->
+  <script>
+        var eol_txt_h = ($(window).height() - $(".eol-txt").height()) / 2;
+        $(".eol-txt").css("margin-top", eol_txt_h)
+  </script>
+
+</body>
+<div style="width:1px;height:1px;overflow:hidden;">
+    <script type="text/javascript">
+    document.write('<img src="http://pv.img.eol.cn/images/cer.net/log/gao-kao.png?'+Math.round(Math.random()*1e17)+'" width="0" height="0"/>');
+    </script>
+    <noscript>
+    <img src="http://pv.img.eol.cn/images/cer.net/log/gao-kao.png" width="0" height="0" />
+    </noscript>
+<!-- ecounter -->
+<script>
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://stat.eol.cn/" : "http://stat.eol.cn/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "mysql.php", 76);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://stat.eol.cn/mysql.php?idsite=76" style="border:0" alt="" /></p></noscript>
+<!-- End ecounter Tag -->
+<script src="http://s6.cnzz.com/stat.php?id=4696180&web_id=4696180" language="JavaScript"></script>
+</div>
+
+</html>

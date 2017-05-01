@@ -111,12 +111,18 @@ app.use(favicon('./public/logo-48.png'))
 app.use('/service-worker.js', serve('./dist/service-worker.js'))
 app.use('/manifest.json', serve('./manifest.json'))
 app.use('/dist', serve('./dist'))
-app.use('/public', serve('./public'))
+app.use('/website', serve('./website'))
+
+app.get('/', function(req, res, next) {
+  //这里就是生成你默认页面的代码
+  //下面这句的意思是用一个叫做index的模板生成页面
+  res.sendfile("./website/index.html");
+});
+
 
 app.get('/view/*', viewRender)
 
 app.post('/image/uploading', function(req, res, next){
-  console.log(11111)
   //生成multiparty对象，并配置上传目标路径
   var imagePath = './public/imgs/'
   var imageName = ''
