@@ -7,7 +7,7 @@
     "dev": "supervisor --watch ./server server",
     "start": "cross-env NODE_ENV=production PORT=80 node server",
     "start:f": "cross-env NODE_ENV=production PORT=80 forever start server.js",
-    "restart": "forever restartall",
+    "restart:f": "cross-env NODE_ENV=production forever restartall",
     "stop": "forever stopall",
     "build": "rimraf dist && npm run build:client && npm run build:server",
     "build:client": "cross-env NODE_ENV=production webpack --config build/webpack.client.config.js --progress --hide-modules",

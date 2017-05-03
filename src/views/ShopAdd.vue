@@ -79,12 +79,18 @@
 			}
 	  
 		},
+		computed: {
+			userid() {
+				return this.$store.getters.userid;
+			}
+		},
 		methods: {
 			onSubmit() {
 				this.$refs.shopForm.validate((valid) => {
 					if (valid) {
 						this.sending = true;
 						let params = {
+							userid: this.userid,
 							restname: this.shopForm.restname,
 							mobile: this.shopForm.mobile,
 							telephone: this.shopForm.telephone,
@@ -94,19 +100,15 @@
 							params.restid = this.restid;
 							RestApi.updateRest(params, (res) => {
 								this.sending = false;
-								if(res.errnum == 10000) {
-									this.$store.dispatch('fetchRestList')
-									this.$router.push('/view/main/shopmanage')
-								}
+								this.$store.dispatch('fetchRestList')
+								this.$router.push('/view/main/shopmanage')
 								
 							})
 						} else {
 							RestApi.addRest(params, (res) => {
 								this.sending = false;
-								if(res.errnum == 10000) {
-									this.$store.dispatch('fetchRestList')
-									this.$router.push('/view/main/shopmanage')
-								}
+								this.$store.dispatch('fetchRestList')
+								this.$router.push('/view/main/shopmanage')
 								
 							})
 						}

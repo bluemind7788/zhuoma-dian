@@ -6,8 +6,19 @@ module.exports = {
         var params = req.query || req.params;
         BaseDao.pool.getConnection(function(err, connection) {
             connection.query($sql.insert, [params.username, params.userpassword, params.mobile], function(err, result) {
-
-                BaseDao.jsonWrite(res, result);
+                var json = {
+                    errnum : 10000,
+                    errmsg: '',
+                    data: {}
+                };
+                if(err) {
+                    json.errnum = 10001;
+                    json.errmsg = '注册失败'
+                } else {
+                    json.data.userid = result.insertId;
+                    json.data.username = params.username;
+                }
+                BaseDao.jsonWrite(res, json);
                 connection.release();
             });
         });

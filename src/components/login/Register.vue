@@ -66,8 +66,9 @@ export default {
 						userpassword: password,
 						mobile: this.regForm.mobile
 					}, (res) => {
+						this.$message.success('注册成功!');
 						this.sending = false;
-						typeof localStorage != 'undefined' && localStorage.setItem('username', this.regForm.account);
+						this.$store.dispatch('setUser', {userid: res.data.userid, username: res.data.username})
 						this.$router.push('/view/main/')
 					})
 				} else {

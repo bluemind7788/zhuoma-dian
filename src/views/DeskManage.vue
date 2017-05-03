@@ -75,7 +75,8 @@
 						num: this.addDeskForm.num
 					}, (res) => {
 						console.log(res)
-						this.dialogFormVisible = false
+						this.$store.dispatch('fetchDesks')
+						this.dialogFormVisible = false;
 					})
 				}
 

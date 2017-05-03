@@ -5,7 +5,7 @@ module.exports = {
 	insert: function (req, res, next) {
         var params = req.query || req.params;
         BaseDao.pool.getConnection(function(err, connection) {
-            connection.query($sql.insert, [params.restname, params.telephone, params.mobile, params.address], function(err, result) {
+            connection.query($sql.insert, [params.restname, params.telephone, params.mobile, params.address, params.userid], function(err, result) {
                 var json = {
                 	errnum : 10000,
                 	errmsg: ''

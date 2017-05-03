@@ -82,8 +82,7 @@ export default {
 					}, (res) => {
 						this.sending = false;
 					
-						localStorage.setItem('username', this.loginForm.account);
-						localStorage.setItem('userid', res.data.userid);
+						this.$store.dispatch('setUser', {userid: res.data.userid, username: this.loginForm.account})
 						this.$router.push('/view/main/')
 					}, () => {
 						this.sending = false;

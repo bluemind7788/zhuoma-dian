@@ -48,19 +48,30 @@ const store = new Vuex.Store({
         commit('setUser', {userid: userid, username: username})
       }
     },
+    setUser({ commit }, user) {
+      localStorage.setItem('userid', user.userid);
+      localStorage.setItem('username', user.username);
+      commit('setUser', user)
+    },
     clearUser({ commit }) {
       localStorage.clear();
       commit('setUser', {userid: '', username: ''})
     },
     fetchRestList({ commit, getters, dispatch }) {
-      if(!getters.userid) return;
+      if(!getters.userid) {
+        commit('setRestList', []);
+        return;
+      }
       RestApi.fetchRestList({
         userid: getters.userid,
       }, (res) => {
         if(res.errnum == 10000) {
-          commit('setRestList', res.data.list);
-          commit('setSelectedRestId', res.data.list[0].restid);
-          dispatch('updateSelectedRestId', res.data.list[0].restid);
+          if(res.data.list && res.data.list.length > 0) {
+            commit('setRestList', res.data.list);
+            commit('setSelectedRestId', res.data.list[0].restid);
+            dispatch('updateSelectedRestId', res.data.list[0].restid);
+          }
+          
         }
       })
     },
