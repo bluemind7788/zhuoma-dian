@@ -53,8 +53,8 @@ module.exports = function(app) {
     app.get('/api/menu', function(req, res, next) {
         menuDao.queryByRestId(req, res, next);
     });
-    app.get('/api/addFood', function(req, res, next) {
-        menuDao.insert(req, res, next);
+    app.get('/api/addOrUpdateFood', function(req, res, next) {
+        menuDao.insertOrUpdate(req, res, next);
     });
     app.get('/api/deleteFood', function(req, res, next) {
         menuDao.delete(req, res, next);

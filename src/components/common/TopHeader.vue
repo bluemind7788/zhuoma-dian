@@ -12,7 +12,7 @@
 					</el-select>
 				</div>
 				<span class="username">{{ username }}</span>
-				<el-button type="text" @click="onLogout" >退出</el-button>
+				<el-button type="text" @click="clearUser" >退出</el-button>
 			</div>
 			<div class="logp-title" >桌码商户后台管理系统</div>
 		</div>
@@ -53,8 +53,8 @@
 			},
 		},
 		methods: {
-			onLogout() {
-				localStorage.clear();
+			clearUser() {
+				this.$store.dispatch('clearUser')
 				this.$router.push('/view/login')
 			}
 		}

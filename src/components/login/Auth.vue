@@ -81,12 +81,12 @@ export default {
 						userpassword: password,
 					}, (res) => {
 						this.sending = false;
-						if(res.errnum != 10000) {
-							return ;
-						}
+					
 						localStorage.setItem('username', this.loginForm.account);
 						localStorage.setItem('userid', res.data.userid);
 						this.$router.push('/view/main/')
+					}, () => {
+						this.sending = false;
 					})
 				} else {
 					console.log('error submit!!');

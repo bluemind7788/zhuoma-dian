@@ -43,7 +43,7 @@
 
 	export default {
 		mounted() {
-			this.$store.dispatch('fetchRestList')
+			// this.$store.dispatch('fetchRestList')
 		},
 		data() {
 			return {

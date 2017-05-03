@@ -95,6 +95,7 @@
 							RestApi.updateRest(params, (res) => {
 								this.sending = false;
 								if(res.errnum == 10000) {
+									this.$store.dispatch('fetchRestList')
 									this.$router.push('/view/main/shopmanage')
 								}
 								
@@ -103,6 +104,7 @@
 							RestApi.addRest(params, (res) => {
 								this.sending = false;
 								if(res.errnum == 10000) {
+									this.$store.dispatch('fetchRestList')
 									this.$router.push('/view/main/shopmanage')
 								}
 								

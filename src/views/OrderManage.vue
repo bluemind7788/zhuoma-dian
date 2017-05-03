@@ -400,6 +400,7 @@ export default {
         .date-picker
             margin-left 14px
     .fans-analyse-overview
+        margin-bottom 30px
         .basic-info
             margin-top 30px
             width 400px

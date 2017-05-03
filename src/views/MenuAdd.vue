@@ -162,7 +162,8 @@ import { MenuApi } from '../api/index'
 			onSubmit() {
 				this.$refs.foodForm.validate((valid) => {
 					if (valid) {
-						MenuApi.addFood({
+						MenuApi.addOrUpdateFood({
+							foodid: this.foodid,
 							restid: this.selectedRestId,
 							foodname: this.foodForm.foodname,
 							image: this.foodForm.image,
@@ -174,7 +175,8 @@ import { MenuApi } from '../api/index'
 						}, (res) => {
 							this.$store.dispatch('fetchMenu')
 							this.$router.push('/view/main/menumanage')
-						})
+						});
+						
 					}
 				});
 				
@@ -191,7 +193,7 @@ import { MenuApi } from '../api/index'
 				const isLt2M = file.size / 1024 / 1024 < 2;
 
 				if (!isJPG) {
-				  this.$message.error('上传头像图片只能是 JPG或PNG 格式!');
+				  this.$message.error('上传头像图片只能是JPG格式!');
 				}
 				if (!isLt2M) {
 				  this.$message.error('上传头像图片大小不能超过 2MB!');

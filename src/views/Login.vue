@@ -25,6 +25,11 @@
 		components: {
 			TopHeader,
 			Auth
+		},
+		mounted() {
+			if(localStorage.getItem('userid')) {
+				this.$router.push('/view/main')
+			}
 		}
 	}
 </script>

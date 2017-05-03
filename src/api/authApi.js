@@ -5,7 +5,7 @@ export default {
 		// callback(MockMenu)
 		API.get('/api/register', params, callback)
 	},
-	login(params, callback) {
-		API.get('/api/login', params, callback)
+	login(params, callback, failback) {
+		API.get('/api/login', params, callback, failback)
 	}
 }

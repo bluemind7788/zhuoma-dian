@@ -1,5 +1,5 @@
 <template>
-	<el-form v-else :model="regForm" :rules="regRules" ref="regForm" label-width="70px" label-position="right">
+	<el-form :model="regForm" :rules="regRules" ref="regForm" label-width="70px" label-position="right">
 		<el-form-item label="用户名" prop="account">
 			<el-input v-model="regForm.account" placeholder=""></el-input>
 		</el-form-item>

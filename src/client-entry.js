@@ -4,13 +4,12 @@ import { app, store } from './app'
 
 import FastClick from 'fastclick'
 
-import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 
 import Vue from 'vue'
 import VueQriously from 'vue-qriously'
 
-Vue.use(ElementUI)
+
 
 Vue.use(VueQriously)
 

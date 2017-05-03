@@ -6,8 +6,8 @@ export default {
 		// callback(MockMenu)
 		API.get('/api/menu', params, callback)
 	},
-	addFood(params, callback) {
-		API.get('/api/addFood', params, callback)
+	addOrUpdateFood(params, callback) {
+		API.get('/api/addOrUpdateFood', params, callback)
 	},
 	deleteFood(params, callback) {
 		API.get('/api/deleteFood', params, callback)

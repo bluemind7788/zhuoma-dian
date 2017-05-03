@@ -45,10 +45,15 @@ const store = new Vuex.Store({
       let userid = localStorage.getItem('userid')
       let username = localStorage.getItem('username')
       if(userid && username) {
-        commit('userInit', {userid: userid, username: username})
+        commit('setUser', {userid: userid, username: username})
       }
     },
+    clearUser({ commit }) {
+      localStorage.clear();
+      commit('setUser', {userid: '', username: ''})
+    },
     fetchRestList({ commit, getters, dispatch }) {
+      if(!getters.userid) return;
       RestApi.fetchRestList({
         userid: getters.userid,
       }, (res) => {
@@ -90,7 +95,7 @@ const store = new Vuex.Store({
   },
 
   mutations: {
-    userInit(state, { userid, username }) {
+    setUser(state, { userid, username }) {
       state.userid = userid;
       state.username = username;
     },

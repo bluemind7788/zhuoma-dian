@@ -278,12 +278,17 @@ import { TagApi, MenuApi } from '../api/index'
 						tagname: inputValue
 					}, (res) => {
 						console.log(res)
-						this.tags.push({name: inputValue, tagid: res.data.tagid, tagord: res.data.tagord, type: 'primary'});
+						this.tags.push({tagname: this.inputValue, tagid: res.data.tagid, tagord: res.data.tagord, type: 'primary'});
+						this.$nextTick(() => {
+							this.inputValue = '';
+							this.inputVisible = false;
+						})
+						
 					})
 					
 				}
-				this.inputVisible = false;
-				this.inputValue = '';
+				
+				
 			},
 			onTagUpgrade(tag) {
 				TagApi.upgradeTag({
@@ -291,15 +296,16 @@ import { TagApi, MenuApi } from '../api/index'
 					tagord: tag.tagord,
 					restid: this.selectedRestId,
 				}, (res) => {
-					this.tags.splice(0, this.tags.length)
-					res.data.forEach((tag) => {
-						this.tags.push({
-							name: tag.tagname,
-							tagid: tag.tagid,
-							tagord: tag.tagord,
-							type: 'primary'
-						});
-					});
+					this.$store.commit('setSelTags', res.data)
+					// this.tags.splice(0, this.tags.length)
+					// res.data.forEach((tag) => {
+					// 	this.tags.push({
+					// 		tagname: tag.tagname,
+					// 		tagid: tag.tagid,
+					// 		tagord: tag.tagord,
+					// 		type: 'primary'
+					// 	});
+					// });
 				});
 			},
 		}

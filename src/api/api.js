@@ -4,7 +4,7 @@ import { Message } from 'element-ui';
 const Base_Url = 'http://localhost:8080'
 
 export default {
-	get(url, params, callback) {
+	get(url, params, callback, failback) {
 		Axios.get(url, {
 			params: params
 		}).then((res) => {
@@ -14,7 +14,8 @@ export default {
 					message: res.data.errmsg,
 					type: 'error'
 				});
-				return
+				failback && failback(res.data)
+				return;
 			}
 			callback && callback(res.data)
 		})

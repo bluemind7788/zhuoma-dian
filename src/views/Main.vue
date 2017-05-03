@@ -26,7 +26,7 @@
 			LeftNav
 		},
 		mounted() {
-			if(!localStorage.getItem('username')) {
+			if(!localStorage.getItem('userid')) {
 				this.$router.push('/view/login')
 			}
 		}
