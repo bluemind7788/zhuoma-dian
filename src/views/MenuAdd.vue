@@ -38,7 +38,7 @@
 
 		</el-form-item>
 		<el-form-item>
-			<el-button type="primary" @click="onSubmit">提 交</el-button>
+			<el-button type="primary" :loading="sending" @click="onSubmit">提 交</el-button>
 			<el-button @click="onCancel">取 消</el-button>
 		</el-form-item>
 
@@ -94,6 +94,7 @@ import { MenuApi } from '../api/index'
 						}
 					],
 				},
+				sending: false
 			}
 		},
 		computed: {
@@ -162,6 +163,7 @@ import { MenuApi } from '../api/index'
 			onSubmit() {
 				this.$refs.foodForm.validate((valid) => {
 					if (valid) {
+						this.sending = true;
 						MenuApi.addOrUpdateFood({
 							foodid: this.foodid,
 							restid: this.selectedRestId,
@@ -173,6 +175,7 @@ import { MenuApi } from '../api/index'
 							tag2: this.foodForm.tags.length > 1 ? this.foodForm.tags[1] : '',
 							tag3: this.foodForm.tags.length > 2 ? this.foodForm.tags[2] : ''
 						}, (res) => {
+							this.sending = false;
 							this.$store.dispatch('fetchMenu')
 							this.$router.push('/view/main/menumanage')
 						});
