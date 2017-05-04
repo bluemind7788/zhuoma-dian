@@ -1,0 +1,215 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	text-align: center;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	max-width: 640px;
+	margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight: normal;
+	font-size: 100%;
+}
+em{
+	font-style: normal;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	cursor: pointer
+}
+em:hover{
+	opacity: 0.5;
+}
+a {
+	text-decoration: none;
+}
+.header{
+	background: #26a9e1;
+	color: #fff;
+	padding-bottom: 34px;
+}
+.header .logo{
+	width: 50%;
+	padding: 38px 0 10px 0;
+}
+.header h1{
+	text-indent: -9999px;
+	height: 0;
+}
+.header h3{
+	font-size: 15px;
+	margin-bottom: 28px;
+}
+.header .download{
+	font-size: 18px;
+	width: 50%;
+	display: block;
+	border: 1px solid #fff;
+	border-radius: 6px;
+	height: 36px;
+	line-height: 36px;
+	margin: 0 auto;
+	color: #fff;
+	font-style: normal;
+}
+.header .download i{
+	display: inline-block;
+	width: 30px;
+	height: 36px;
+	margin-right: 10px;
+	vertical-align: -11px;
+}
+.header .download i.icon-iphone{
+	background: url(../images/iPhone.png) no-repeat center center;
+	background-size: auto 78%;
+}
+.header .download i.icon-android{
+	background: url(../images/Android.png) no-repeat center center;
+	background-size: auto 82%;
+}
+.header .download span{
+	display: inline-block;
+	height: 36px;
+}
+.main{
+	padding-bottom: 10px;
+}
+.main p{
+	padding: 22px 0;
+	font-size: 15px;
+	color: #333;
+}
+.main .gkpic{
+	width: 65%;
+}
+
+.footer{
+	background: #fafafa;
+	padding: 23px 28px 13px 15px;
+}
+.footer .img{
+	background: url(../images/thumb.gif) no-repeat right center;
+	background-size: 45%;
+	text-align: left;
+}
+.footer .img img{
+	width: 45%;
+}
+.footer p{
+	padding: 13px 0;
+	color: #333;
+}
+.footer p span{
+	color: #ee5917;
+}
+
+/*微信页*/
+.cover-weixin{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	left: 0;
+	top: 0;
+}
+.cover-weixin .black-bg{
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0.75;
+}
+
+.topTxt{
+	position: relative;
+	z-index: 2;
+	margin: 22px 36px;
+	height: 400px;
+}
+.topTxt .txt{
+	width: 93%;
+	position: relative;
+	padding-top: 40px;
+	margin: 0 auto
+}
+.topTxt .btn-close{
+	position: absolute;
+	left: 5px;
+	top: 20px;
+	color: #fff;
+	font-style: normal;
+	font-size: 15px;
+}
+.topTxt .txt p{
+	color: #fff;
+	font-size: 16px;
+	margin-top: 24px;
+	text-align: left;
+}
+.topTxt .txt .brower{
+	background: #21292c;
+	height: 32px;
+	line-height: 32px;
+	padding: 0 10px;
+	display: inline-block;
+	margin-left: 10px;
+}
+
+
+
+
+
+
+/*icon*/
+i{
+	display: inline-block;
+	font-style: normal;
+}
+.icon-close{
+	width: 12px;
+	height: 12px;
+	background: url(../images/icon-close.png) no-repeat center center;
+	background-size: 100% 100%;
+	vertical-align: -1px;
+	margin-right: 5px;
+}
+.icon-number{
+	border-radius: 100%;
+	width: 24px;
+	height: 24px;
+	background: #ff9600;
+	color: #fff;
+	font-size: 17px;
+	text-align: center;
+	line-height: 24px;
+	vertical-align: -1px;
+	margin-right: 8px;
+}
+.icon-threep{
+	width: 28px;
+	height: 28px;
+	background: url(../images/icon-threep.png) no-repeat;
+	background-size: 100% auto;
+	vertical-align: -10px;
+	margin: 0 8px;
+}
+.icon-earth{
+	width: 24px;
+	height: 24px;
+	background: url(../images/icon-earth.png) no-repeat;
+	background-size: 100% auto;
+	vertical-align: -6px;
+}
+.icon-line{
+	position: absolute;
+	width: 64px;
+	height: 100px;
+	background: url(../images/icon-line.png) no-repeat right top;
+	background-size: 100% auto;
+	top: 0px;
+	right: -12%;
+}

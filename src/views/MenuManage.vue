@@ -245,7 +245,7 @@ import { TagApi, MenuApi } from '../api/index'
 					TagApi.deleteTag({
 						tagid: tag.tagid
 					}, (res) => {
-						this.tags.splice(this.tags.indexOf(tag), 1);
+						this.$store.dispatch('fetchTags')
 						this.fetchMenu();
 						this.$message({
 							type: 'success',
@@ -278,7 +278,7 @@ import { TagApi, MenuApi } from '../api/index'
 						tagname: inputValue
 					}, (res) => {
 						console.log(res)
-						this.tags.push({tagname: this.inputValue, tagid: res.data.tagid, tagord: res.data.tagord, type: 'primary'});
+						this.$store.dispatch('fetchTags')
 						this.$nextTick(() => {
 							this.inputValue = '';
 							this.inputVisible = false;

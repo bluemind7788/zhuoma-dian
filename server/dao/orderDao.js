@@ -148,7 +148,9 @@ module.exports = {
                         } else {
                             order.foodlist.push({
                                 foodid: item.foodid,
-                                foodname: item.foodname
+                                foodname: item.foodname,
+                                price: item.price,
+                                num: item.num,
                             })
                         }
 
